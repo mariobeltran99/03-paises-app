@@ -1,26 +1,11 @@
-<div class="row">
+<section class="row">
 
-    <div class="col-3">
-        <h2>Búsquedas</h2>
-        <hr>
-        <ul class="list-group">
-            <li class="list-group-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
-                routerLink="">
-                Buscar país
-            </li>
+    <nav class="col-3">
+        <app-sidenav></app-sidenav>
+    </nav>
 
-            <li class="list-group-item" routerLinkActive="active" routerLink="region">
-                Por región
-            </li>
-
-            <li class="list-group-item" routerLinkActive="active" routerLink="capital">
-                Por capital
-            </li>
-        </ul>
-    </div>
-
-    <div class="col">
+    <main class="col">
         <router-outlet></router-outlet>
-    </div>
+    </main>
 
-</div>
+</section>

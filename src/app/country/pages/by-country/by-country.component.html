@@ -1,1 +1,17 @@
-<p>by-country works!</p>
+<h2>Por país</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <app-find (find)="find($event)"></app-find>
+    </div>
+</div>
+<hr>
+
+<div *ngIf="notFound" class="alert alert-danger">
+    No se encontró ningún país con '{{term}}'
+</div>
+
+<article *ngIf="countries.length > 0">
+    <app-table-countries [countries]="countries"></app-table-countries>
+</article>
