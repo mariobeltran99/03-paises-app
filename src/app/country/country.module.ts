@@ -16,8 +16,14 @@ import { CountryComponent } from './pages/country/country.component';
         ByRegionComponent,
         CountryComponent
     ],
+    exports: [
+        ByCapitalComponent,
+        ByCountryComponent,
+        ByRegionComponent,
+        CountryComponent
+    ],
     imports: [
         CommonModule
     ]
 })
-export class PaisModule { }
+export class CountryModule { }

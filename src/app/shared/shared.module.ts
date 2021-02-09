@@ -5,9 +5,14 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 
 
 @NgModule({
-  declarations: [SidenavComponent],
-  imports: [
-    CommonModule
-  ]
+    declarations: [
+        SidenavComponent
+    ],
+    exports: [
+        SidenavComponent
+    ],
+    imports: [
+        CommonModule
+    ]
 })
 export class SharedModule { }
