@@ -26,4 +26,9 @@ export class CountryService {
         return this.http.get<Country[]>(url);
     }
 
+    public findByCode(code: string): Observable<Country> {
+        const url = `${this.baseURL}/alpha/${code}`;
+        return this.http.get<Country>(url);
+    }
+
 }
