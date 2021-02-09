@@ -25,7 +25,6 @@ export class CountryComponent implements OnInit {
         this.activateRoute.params
             .pipe(
                 switchMap(({ id }) => this.countryService.findByCode(id)),
-                // tap(console.log)
             )
             .subscribe(country => this.country = country);
 

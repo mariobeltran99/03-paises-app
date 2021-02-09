@@ -22,7 +22,6 @@ export class ByCapitalComponent {
         this.countryService.findByCapital(term)
             .subscribe(countries => {
                 this.countries = countries;
-                console.log(countries);
             }, (err) => {
                 this.notFound = true;
                 this.countries = [];

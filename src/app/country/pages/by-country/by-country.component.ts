@@ -24,7 +24,6 @@ export class ByCountryComponent {
         this.countryService.findCountry(term)
             .subscribe(countries => {
                 this.countries = countries;
-                console.log(countries);
             }, (err) => {
                 this.notFound = true;
                 this.countries = [];

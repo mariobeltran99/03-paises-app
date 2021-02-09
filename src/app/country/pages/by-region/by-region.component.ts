@@ -1,16 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { pipe } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { Country } from '../../interfaces/country.interfaces';
+import { CountryService } from '../../services/country.service';
 
 @Component({
-  selector: 'app-by-region',
-  templateUrl: './by-region.component.html',
-  styles: [
-  ]
+    selector: 'app-by-region',
+    templateUrl: './by-region.component.html',
+    styles: [
+    ]
 })
-export class ByRegionComponent implements OnInit {
+export class ByRegionComponent {
 
-  constructor() { }
+    public currentRegion = '';
+    public countries: Country[] = [];
 
-  ngOnInit(): void {
-  }
+    regions: string[] = ['africa', 'americas', 'asia', 'europe', 'oceania'];
+
+    constructor(private countryService: CountryService) { }
+
+    public findByRegion(region: string): void {
+        if (region === this.currentRegion) {
+            return;
+        }
+        this.currentRegion = region;
+        this.countries = [];
+        this.countryService.findByRegion(region)
+            .subscribe(countries => this.countries = countries);
+    }
+
+    public activeRegion(region: string): string {
+        return (region === this.currentRegion) ? 'btn-primary' : 'btn-outline-primary';
+    }
 
 }
