@@ -20,4 +20,10 @@ export class CountryService {
         return this.http.get<Country[]>(url);
     }
 
+    public findByCapital(term: string): Observable<Country[]> {
+        const url = `${this.baseURL}/capital/${term}`;
+
+        return this.http.get<Country[]>(url);
+    }
+
 }
