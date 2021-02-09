@@ -14,7 +14,12 @@
             <td>
                 <img class="small-flag" [src]="country.flag" alt="">
             </td>
-            <td>{{country.name}}</td>
+            <td>
+                <span *ngIf="country.capital">
+                    {{ country.capital }},
+                </span>
+                {{country.name}}
+            </td>
             <td>{{country.population | number}}</td>
             <td>
                 <a class="btn btn-sm btn-outline-secondary" [routerLink]="['/country', country.alpha2Code]">

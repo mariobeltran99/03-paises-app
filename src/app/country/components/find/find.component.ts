@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
@@ -19,7 +19,11 @@ export class FindComponent implements OnInit {
 
     private debouncer: Subject<string> = new Subject();
 
+    @Input()
+    public placeholder = 'buscar...';
+
     public term = '';
+
 
 
     constructor() { }

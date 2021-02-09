@@ -1,1 +1,18 @@
-<p>by-capital works!</p>
+<h2>Por capital</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <app-find (find)="findByCapital($event)" (write)="suggestion($event)" [placeholder]="'buscar por capital...'">
+        </app-find>
+    </div>
+</div>
+<hr>
+
+<div *ngIf="notFound" class="alert alert-danger">
+    No se encontró ningún país con capital: '{{term}}'
+</div>
+
+<article *ngIf="countries.length > 0">
+    <app-table-countries [countries]="countries"></app-table-countries>
+</article>
