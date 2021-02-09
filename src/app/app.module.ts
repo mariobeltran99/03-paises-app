@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { ByCountryComponent } from './pais/pages/by-country/by-country.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ByCountryComponent
   ],
   imports: [
     BrowserModule
