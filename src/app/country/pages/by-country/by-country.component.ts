@@ -32,4 +32,10 @@ export class ByCountryComponent {
 
     }
 
+    public suggestion(term: string): void {
+        this.notFound = false;
+        // TODO: Crear sugerencias.
+        console.log(term);
+    }
+
 }

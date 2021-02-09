@@ -1,3 +1,4 @@
 <form (ngSubmit)="onFind()" autocomplete="off">
-    <input class="form-control" type="text" name="term" placeholder="buscar país..." autofocus [(ngModel)]="term">
+    <input class="form-control" type="text" name="term" placeholder="buscar país..." autofocus [(ngModel)]="term"
+        (input)="keyPress()">
 </form>
