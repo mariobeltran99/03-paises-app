@@ -1,18 +1,23 @@
-<h2>Por capital</h2>
-<hr>
+<header class="animate__animated animate__fadeIn animate__faster">
+    <h2>Por capital</h2>
+    <hr>
 
-<div class="row">
-    <div class="col">
-        <app-find (find)="findByCapital($event)" (write)="suggestion($event)" [placeholder]="'buscar por capital...'">
-        </app-find>
+    <div class="row">
+        <div class="col">
+            <app-find (find)="findByCapital($event)" (write)="suggestion($event)"
+                [placeholder]="'buscar por capital...'">
+            </app-find>
+        </div>
     </div>
-</div>
-<hr>
+    <hr>
+</header>
 
-<div *ngIf="notFound" class="alert alert-danger">
+<div class="mt-3" *ngIf="notFound" class="alert alert-danger">
     No se encontró ningún país con capital: '{{term}}'
 </div>
 
-<article *ngIf="countries.length > 0">
-    <app-table-countries [countries]="countries"></app-table-countries>
-</article>
+<section class="row" *ngIf="countries.length > 0">
+    <article class="col">
+        <app-table-countries [countries]="countries"></app-table-countries>
+    </article>
+</section>

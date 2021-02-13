@@ -1,17 +1,22 @@
-<h2>Por país</h2>
-<hr>
+<header class="animate__animated animate__fadeIn animate__faster">
+    <h2>Por país</h2>
+    <hr>
 
-<div class="row">
-    <div class="col">
-        <app-find (find)="find($event)" (write)="suggestion($event)" [placeholder]="'buscar por país...'"></app-find>
+    <div class="row">
+        <div class="col">
+            <app-find (find)="find($event)" (write)="suggestion($event)" [placeholder]="'buscar por país...'">
+            </app-find>
+        </div>
     </div>
-</div>
-<hr>
+    <hr>
+</header>
 
 <div *ngIf="notFound" class="alert alert-danger">
     No se encontró ningún país con '{{term}}'
 </div>
 
-<article *ngIf="countries.length > 0">
-    <app-table-countries [countries]="countries"></app-table-countries>
-</article>
+<section class="row animate__animated animate__fadeIn animate__faster" *ngIf="countries.length > 0">
+    <article class="col">
+        <app-table-countries [countries]="countries"></app-table-countries>
+    </article>
+</section>
