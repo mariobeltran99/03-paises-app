@@ -12,5 +12,5 @@ steps:
         "-c",
         "-d",
         "./dist/paisesApp",
-        "gs://angualrpaisesapp",
+        "gs://angularpaisesapp",
       ]
