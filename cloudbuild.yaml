@@ -5,4 +5,12 @@ steps:
     args: ["build"]
   - name: gcr.io/cloud-builders/gsutil
     args:
-      ["-m", "rsync", "-r", "-c", "-d", "./app/assets", "gs://angualrpaisesapp"]
+      [
+        "-m",
+        "rsync",
+        "-r",
+        "-c",
+        "-d",
+        "./dist/paisesApp",
+        "gs://angualrpaisesapp",
+      ]
